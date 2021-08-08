@@ -1,15 +1,23 @@
-import React from 'react';
-/* import Products from './components/Products/Products'; 
-   import NavBar from '/.components/NavBar/NavBar'; 
-
-Instead of importing all of them separately, we can combine them and write them as follows. */
+import React, { useState, useEffect } from 'react';
 import {Products , Navbar} from './components';
+import  { commerce } from './lib/commerce';
 
 const App = () => {
+    const [products, setProducts] =useState([]);
+
+    const fetchProducts = async () => {
+        const { data } = await commerce.products.list();
+        setProducts(data);
+    }
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
     return (
         <div>
-        <Navbar/>
-        <Products/>         
+            <Navbar/>
+            <Products products={products}/>         
         </div>
     )
 }

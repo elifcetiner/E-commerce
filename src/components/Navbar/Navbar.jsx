@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Badge,  Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 //import { Link, useLocation } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ const Navbar = () => {
         <>
             <AppBar position="fixed" className={classes.appBar} color = "inherit">
                 <Toolbar>
-                    <Typography variant = "h6" className={classes.appBar} color = "inherit">
+                    <Typography variant = "h6" className={classes.appBar} color = "inherit" >
                         <img src = {logo} alt = "Commerce.js" height="25px" className= {classes.image} />
                         Commerce.js
                     </Typography>
